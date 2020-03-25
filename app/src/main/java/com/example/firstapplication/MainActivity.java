@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,9 +13,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String name = "Pham Van Duan";
-        int year = 2020;
+        int number = 5;
 
-        Log.d("DuanPham", name + "-" + year);
+        if (number == 9) {
+            Log.d("DuanPham", "True");
+        } else {
+            Log.d("DuanPham", "false");
+
+        }
+
+        String moth = "March";
+        switch (moth) {
+            case "Feruary":
+                Log.d("DuanPham", "February");
+                break;
+            case "March" :
+                Log.d("DuanPham", "March");
+                break;
+            default: Log.d("DuanPham", "No Value");
+        }
     }
 }

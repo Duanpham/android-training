@@ -1,18 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:weightSum="10"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
+    <!--2 3 4 1 -->
+    <LinearLayout
+        android:background="#ff0"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:text="1"
+            android:layout_weight="1"
+            android:textSize="40sp"
+            android:background="#e92996"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:text="2"
+            android:textSize="40sp"
+            android:layout_weight="1"
+            android:background="#8b8b17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+1   <!-- <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        android:background="#ff0"
+        android:textColor="#E60F54"
+        android:layout_weight="2"
+        android:text="Android" /> -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        android:background="#237842"
+        android:textColor="#E60F54"
+        android:layout_weight="3"
+        android:text="Web" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        android:background="#959564"
+        android:textColor="#36E88C"
+        android:layout_weight="4"
+        android:text="IOS" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="odp"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        android:background="#78C627"
+        android:textColor="#891BCD"
+        android:layout_weight="1"
+        android:text="NET" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

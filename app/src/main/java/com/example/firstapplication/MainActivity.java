@@ -12,25 +12,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        int number = 5;
-
-        if (number == 9) {
-            Log.d("DuanPham", "True");
-        } else {
-            Log.d("DuanPham", "false");
-
-        }
-
-        String moth = "March";
-        switch (moth) {
-            case "Feruary":
-                Log.d("DuanPham", "February");
-                break;
-            case "March" :
-                Log.d("DuanPham", "March");
-                break;
-            default: Log.d("DuanPham", "No Value");
-        }
     }
 }

@@ -19,8 +19,6 @@ class PagerAdapter(fm: FragmentManager) :
             }
             // this method to set our tab positions
         }
-
-
     }
 
     // return 5 tabs

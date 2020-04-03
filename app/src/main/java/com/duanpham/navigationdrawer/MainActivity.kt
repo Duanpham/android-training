@@ -1,20 +1,20 @@
 package com.duanpham.navigationdrawer
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.FragmentTransaction
-import com.duanpham.navigationdrawer.R
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
 
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
@@ -59,6 +59,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         tabLayout.setupWithViewPager(viewPager)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.add_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.add -> {
+                Toast.makeText(this, "Add clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.add_sensor -> {
+                Toast.makeText(this, "Add sensor clicked", Toast.LENGTH_SHORT).show()
+                val dialogView = LayoutInflater.from(this).inflate(R.layout.add_sensor, null)
+                val builder = AlertDialog.Builder(this)
+                builder.setView(dialogView).show()
+            }
+            R.id.add_fan -> {
+                Toast.makeText(this, "Add fan clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.inbox -> {
@@ -88,7 +111,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 //                    .commit()
             }
-            R.id.snooze -> {
+            R.id.draft -> {
                 Toast.makeText(this, "Draft clicked", Toast.LENGTH_SHORT).show()
 //                draftFragment = DraftFragment()
 //                supportFragmentManager
@@ -110,6 +133,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
-
-
 }
